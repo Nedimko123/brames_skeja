@@ -49,11 +49,7 @@ export default component$(() => {
           }}
         >
           <i
-            class={`fa-solid fa-bars text-2xl  transition duration-300 ${
-              isMobileDropdownOpen.value
-                ? "rotate-[-45deg]"
-                : "hover:rotate-[-45deg]"
-            }`}
+            class={`fa-solid fa-bars text-2xl  transition duration-300 hover:rotate-[-45deg]`}
           ></i>
         </button>
         <ul

@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 export default component$(() => {
   return (
     <footer class="border-t border-slate-500  w-full  bg-slate-700 text-slate-100">
-      <div class="flex flex-row justify-between p-4">
+      <div class="flex flex-row justify-between p-4 gap-2">
         <p>© Brames DOO</p>
         <div class="flex flex-col items-start gap-4">
           <h1 class='text-xl font-bold'>Korisne informacije</h1>
