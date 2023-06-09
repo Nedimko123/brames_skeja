@@ -15,13 +15,18 @@ export default component$(() => {
 
   return (
     <header class="border-b border-slate-500 flex flex-row justify-between px-2 py-1 bg-slate-700 text-slate-100 items-center relative">
-      <Image
-        src="/logo.png"
-        layout="constrained"
-        width={120}
-        height={120}
-        alt="brames-logotip"
-      />
+      <a
+        href="/
+      "
+      >
+        <Image
+          src="/logo.png"
+          layout="constrained"
+          width={120}
+          height={120}
+          alt="brames-logotip"
+        />
+      </a>
       <ul class=" gap-8 hidden sm:flex sm:flex-row">
         {links.map((link) => {
           return (
