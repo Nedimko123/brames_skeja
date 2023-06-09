@@ -1,112 +1,86 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { Image } from "@unpic/qwik";
 
-import Counter from '~/components/starter/counter/counter';
-import Hero from '~/components/starter/hero/hero';
-import Infobox from '~/components/starter/infobox/infobox';
-import Starter from '~/components/starter/next-steps/next-steps';
+const benefits = [
+  {
+    header: "Otpornost",
+    text: "Otpornost na nagle promjene temperature i visoku vlažnost zraka.",
+    icon: "fa-solid fa-hand-fist",
+  },
+  {
+    header: "Visoka čvrstoća i pouzdanost",
+    text: "Visoka čvrstoća i pouzdanost - ovi parametri ovise o prisutnosti metalnih rebara i dovoljnoj debljini metala.",
+    icon: "fa-solid fa-user-shield",
+  },
+  {
+    header: "Otpornost na koroziju",
+    text: "Većina modela ima zaštitnu, antikorozivnu prevlaku (sloj cinkovog ili polimernog raspršivanja) koji im omogućuje da zadrže svoj izvorni izgled dugo čak iu uvjetima visoke vlažnosti. ",
+    icon: "fa-solid fa-virus-slash",
+  },
+  {
+    header: "Ekološki",
+    text: "Prijateljstvo okoliša ovog građevinskog materijala. Ne emitirajte štetne kemikalije u atmosferu. ",
+    icon: "fa-solid fa-leaf",
+  },
+  {
+    header: "Dugi vijek trajanja",
+    text: "Dugi vijek trajanja. Pravilnim montažom, metalni profili mogu vam dugo poslužiti. ",
+    icon: "fa-solid fa-hourglass",
+  },
+  {
+    header: "Jedinstvena kombinacija cijene i kvalitete",
+    text: "Niska cijena ih povoljno razlikuje na tržištu građevinskih materijala. Korištenje metalnih profila u popravcima i građevinskim radovima neće značajno utjecati na konačni proračun i neće uzrokovati nepredviđene materijalne troškove.",
+    icon: "fa-solid fa-hand-holding-dollar",
+  },
+];
 
 export default component$(() => {
   return (
-    <>
-      <Hero />
-      <Starter />
-
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
-
-      <div class="container container-center container-spacing-xl">
-        <h3>
-          You can <span class="highlight">count</span>
-          <br /> on me
-        </h3>
-        <Counter />
-      </div>
-
-      <div class="container container-flex">
-        <Infobox>
-          <div q:slot="title" class="icon icon-cli">
-            CLI Commands
-          </div>
-          <>
-            <p>
-              <code>npm run dev</code>
-              <br />
-              Starts the development server and watches for changes
-            </p>
-            <p>
-              <code>npm run preview</code>
-              <br />
-              Creates production build and starts a server to preview it
-            </p>
-            <p>
-              <code>npm run build</code>
-              <br />
-              Creates production build
-            </p>
-            <p>
-              <code>npm run qwik add</code>
-              <br />
-              Runs the qwik CLI to add integrations
-            </p>
-          </>
-        </Infobox>
-
-        <div>
-          <Infobox>
-            <div q:slot="title" class="icon icon-apps">
-              Example Apps
-            </div>
-            <p>
-              Have a look at the <a href="/demo/flower">Flower App</a> or the{' '}
-              <a href="/demo/todolist">Todo App</a>.
-            </p>
-          </Infobox>
-
-          <Infobox>
-            <div q:slot="title" class="icon icon-community">
-              Community
-            </div>
-            <ul>
-              <li>
-                <span>Questions or just want to say hi? </span>
-                <a href="https://qwik.builder.io/chat" target="_blank">
-                  Chat on discord!
-                </a>
-              </li>
-              <li>
-                <span>Follow </span>
-                <a href="https://twitter.com/QwikDev" target="_blank">
-                  @QwikDev
-                </a>
-                <span> on Twitter</span>
-              </li>
-              <li>
-                <span>Open issues and contribute on </span>
-                <a href="https://github.com/BuilderIO/qwik" target="_blank">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <span>Watch </span>
-                <a href="https://qwik.builder.io/media/" target="_blank">
-                  Presentations, Podcasts, Videos, etc.
-                </a>
-              </li>
-            </ul>
-          </Infobox>
+    <div class="bg-slate-700 text-slate-100 block p-11">
+      <div class="flex  flex-col sm:flex-row gap-4">
+        <div class="sm:w-1/2 flex flex-col gap-2">
+          <p class="text-green-400 font-bold text-base">
+            Karakteristike metalnih profila
+          </p>
+          <h2 class="text-2xl">
+            Pružanje najboljih svjetskih industrijskih usluga.
+          </h2>
+          <p>
+            Osigurali smo u prvom redu strano tržište, tačnije u Njemačkoj, a
+            već imamo dogovorene poslove i za nekoliko domaćih firmi. Kvalitet
+            proizvoda i ispunjenje ugovorenih uvjeta bit će naš zaštitni znak.
+            Za proizvodnju koristimo najkvalitetniji italijanski tim.
+          </p>
         </div>
+        <Image
+          class="w-1/2"
+          src="/1.jpg"
+          layout="constrained"
+          width={120}
+          height={120}
+          alt="brames"
+        />
       </div>
-    </>
+      <div class="flex flex-row overflow-scroll w-full snap-x gap-10 p-10 snap-mandatory">
+      {benefits.map((benefit)=>{
+        return <div class="min-w-[350px] snap-center flex flex-col gap-4 border border-slate-500 p-10 justify-center items-center">
+          <i class={`text-3xl ${benefit.icon}`}></i>
+          <h2 class="text-2xl font-bold">{benefit.header}</h2>
+          <p>{benefit.text}</p>
+        </div>
+      })}
+      </div>
+    </div>
   );
 });
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: "Brames - Proizvodnja Metalnih Profila",
   meta: [
     {
-      name: 'description',
-      content: 'Qwik site description',
+      name: "description",
+      content: "Brames, Zavidovici se bavi proizvodnjom metalnih profila",
     },
   ],
 };
