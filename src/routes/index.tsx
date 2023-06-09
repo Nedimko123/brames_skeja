@@ -54,6 +54,7 @@ export default component$(() => {
           </p>
         </div>
         <Image
+          key="image-brames"
           class="w-full sm:w-1/2"
           src="/1.jpg"
           layout="constrained"
@@ -63,13 +64,15 @@ export default component$(() => {
         />
       </div>
       <div class="flex flex-row overflow-scroll w-full snap-x gap-10 p-10 snap-mandatory">
-      {benefits.map((benefit)=>{
-        return <div class="min-w-[350px] snap-center flex flex-col gap-4 border border-slate-500 p-10 justify-center items-center">
-          <i class={`text-3xl ${benefit.icon}`}></i>
-          <h2 class="text-2xl font-bold">{benefit.header}</h2>
-          <p>{benefit.text}</p>
-        </div>
-      })}
+        {benefits.map((benefit) => {
+          return (
+            <div class="min-w-[350px] snap-center flex flex-col gap-4 border border-slate-500 p-10 justify-center items-center">
+              <i class={`text-3xl ${benefit.icon}`}></i>
+              <h2 class="text-2xl font-bold">{benefit.header}</h2>
+              <p>{benefit.text}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
