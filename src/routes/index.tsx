@@ -54,7 +54,7 @@ export default component$(() => {
           </p>
         </div>
         <Image
-          class="w-1/2"
+          class="w-full sm:w-1/2"
           src="/1.jpg"
           layout="constrained"
           width={120}

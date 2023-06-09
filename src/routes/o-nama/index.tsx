@@ -47,7 +47,7 @@ export default component$(() => {
           </div>
         </div>
         <Image
-          class="w-1/2"
+          class="w-full sm:w-1/2"
           src="/2.jpg"
           layout="constrained"
           width={120}
