@@ -16,7 +16,6 @@ export default component$(() => {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11388.494471421429!2d18.231332!3d44.4716388!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ebf9e9fd64e1f%3A0x3a4bbb38c525d0ca!2sPD%20%22BRAMES%22%20DOO!5e0!3m2!1sen!2sba!4v1686290650184!5m2!1sen!2sba"
           class="w-full h-96"
-          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
