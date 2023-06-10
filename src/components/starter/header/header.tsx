@@ -1,8 +1,8 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import { Image } from "@unpic/qwik";
 
-const links = [
+export const links = [
   { name: "Početna", link: "/" },
   { name: "O nama", link: "/o-nama/" },
   { name: "Galerija", link: "/galerija/" },
@@ -59,13 +59,13 @@ export default component$(() => {
         </button>
         <ul
           class={`${
-            isMobileDropdownOpen.value ? "visible" : "hidden"
-          } p-4 absolute top-12 left-0 w-screen gap-8 flex flex-col bg-slate-700 z-50`}
+            isMobileDropdownOpen.value ? "scale-y-100" : "scale-y-0"
+          } p-4 absolute top-12 left-0 w-screen gap-8 flex flex-col bg-slate-700 z-50 transition duration-300 origin-top`}
         >
           {links.map((link) => {
             return (
               <>
-                <li>
+                <li class="">
                   <a
                     class={`${
                       loc.url.pathname === link.link

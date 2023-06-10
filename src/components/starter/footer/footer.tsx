@@ -1,10 +1,17 @@
 import { component$ } from "@builder.io/qwik";
+import { links } from "../header/header";
 
 export default component$(() => {
   return (
     <footer class="border-t border-slate-500  w-full  bg-slate-700 text-slate-100">
-      <div class="flex flex-row justify-between p-4 gap-2">
+      <div class="flex flex-col sm:flex-row justify-between p-4 gap-4">
         <p>© Brames DOO</p>
+        <div class="flex flex-col gap-4 items-start">
+          <h1 class="text-xl font-bold">Linkovi</h1>
+          {links.map((link)=>{
+            return <a href={link.link}>{link.name}</a>
+          })}
+        </div>
         <div class="flex flex-col items-start gap-4">
           <h1 class='text-xl font-bold'>Korisne informacije</h1>
           <p>Adresa: Rudače bb, Hajderovići 72225</p>
