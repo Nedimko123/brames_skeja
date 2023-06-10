@@ -9,7 +9,9 @@ export default component$(() => {
         <div class="flex flex-col gap-4 items-start">
           <h1 class="text-xl font-bold">Linkovi</h1>
           {links.map((link)=>{
-            return <a href={link.link}>{link.name}</a>
+            return <a
+            key={link.name}
+            href={link.link}>{link.name}</a>
           })}
         </div>
         <div class="flex flex-col items-start gap-4">
