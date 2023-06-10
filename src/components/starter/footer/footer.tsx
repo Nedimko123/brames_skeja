@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { links } from "../header/header";
-import { useLocation } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const loc = useLocation();
@@ -11,14 +11,14 @@ export default component$(() => {
         <div class="flex flex-col gap-4 items-start">
           <h1 class="text-xl font-bold">Linkovi</h1>
           {links.map((link)=>{
-            return <a
+            return <Link
             class={`${
               loc.url.pathname === link.link
                 ? "text-green-600 font-bold hover:text-green-500"
                 : "text-slate-100 hover:text-slate-50"
             } `}
             key={link.name}
-            href={link.link}>{link.name}</a>
+            href={link.link}>{link.name}</Link>
           })}
         </div>
         <div class="flex flex-col items-start gap-4">

@@ -1,5 +1,5 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
 import { Image } from "@unpic/qwik";
 
 export const links = [
@@ -32,7 +32,7 @@ export default component$(() => {
           return (
             <>
               <li>
-                <a
+                <Link
                   class={`${
                     loc.url.pathname === link.link
                       ? "text-green-600 font-bold hover:text-green-500"
@@ -41,7 +41,7 @@ export default component$(() => {
                   href={link.link}
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             </>
           );
